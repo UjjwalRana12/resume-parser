@@ -2,3 +2,5 @@
 venv
 harsh_resume.pdf
 __pycache__/
+resumes.db
+*.pyc

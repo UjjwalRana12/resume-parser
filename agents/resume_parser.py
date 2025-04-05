@@ -7,7 +7,6 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from utils.parser import ResumeData
 from utils.pdf_loader import extract_text_from_pdf
 
-# Load environment variables
 load_dotenv()
 google_api_key = os.getenv("GOOGLE_API_KEY")
 if not google_api_key:
@@ -78,7 +77,7 @@ def parse_resume_text(resume_text: str) -> Dict[str, Any]:
         Dict containing structured resume data
     """
     try:
-        # Prepare the prompt
+       
         prompt = f"""
         Extract structured resume data from the following text.
 
@@ -126,7 +125,7 @@ def save_parsed_resume(parsed_data: Dict[str, Any], output_file: str) -> None:
 # Example usage
 if __name__ == "__main__":
     # Test with a sample resume
-    sample_resume = "C9742.pdf"
+    sample_resume = "harsh_resume.pdf"  
     try:
         result = parse_resume_file(sample_resume)
         print(json.dumps(result, indent=2))

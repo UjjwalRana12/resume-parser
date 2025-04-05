@@ -20,5 +20,6 @@ langchain-community
 google-generativeai
 python-multipart
 yagmail
+sqlalchemy
 
 
