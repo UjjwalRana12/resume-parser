@@ -16,8 +16,8 @@ langchain-ollama
 langchain-community
 langchain_google_genai
 pyPDF2
-  langchain-community 
-  google-generativeai
-  python-multipart
+langchain-community 
+google-generativeai
+python-multipart
 
 
