@@ -1,5 +1,3 @@
-# utils/similiarity.py
-
 from typing import List, Dict, Any
 from sentence_transformers import SentenceTransformer
 import faiss
@@ -57,6 +55,6 @@ def compare_with_resume(parsed_resume: Dict[str, Any], docs: List[str]) -> List[
     for i, idx in enumerate(indices[0]):
         results.append({
             "document": docs[idx],
-            "similarity_score": float(1 / (1 + distances[0][i]))  # Inverse L2 distance as pseudo similarity
+            "similarity_score": float(1 / (1 + distances[0][i]))  
         })
     return results

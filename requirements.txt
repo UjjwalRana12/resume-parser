@@ -19,5 +19,6 @@ pyPDF2
 langchain-community 
 google-generativeai
 python-multipart
+yagmail
 
 

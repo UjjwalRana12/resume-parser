@@ -1,31 +1,30 @@
-# main.py
-
-import json
 from agents.resume_parser import parse_resume_file
 from utils.similiarity import compare_with_resume
-
-# List of dummy existing documents/resumes/job descriptions to compare with
-existing_docs = [
-    "Experienced software engineer skilled in Python, Django, and REST APIs.",
-    "Full-stack web developer with expertise in React and Node.js.",
-    "Data scientist with experience in machine learning and deep learning projects."
-]
+from utils.mailer import send_email
 
 if __name__ == "__main__":
-    try:
-        resume_path = "C9742.pdf"
-        parsed_resume = parse_resume_file(resume_path)
+    resume = parse_resume_file("harsh_resume.pdf")
 
-        # Save parsed result
-        with open("parsed_resume.json", "w") as f:
-            json.dump(parsed_resume, f, indent=2)
+    documents = [
+        "Software engineer with 5 years experience in Python, Flask, and AWS.",
+        "Data analyst familiar with SQL, Excel, and Power BI.",
+        "Front-end developer skilled in React, JavaScript, and CSS."
+    ]
 
-        print("🔍 Comparing with other documents...\n")
-        results = compare_with_resume(parsed_resume, existing_docs)
+    results = compare_with_resume(resume, documents)
 
-        for i, match in enumerate(results, 1):
-            print(f"{i}. Document: {match['document']}")
-            print(f"   Similarity Score: {match['similarity_score']:.2f}\n")
+    email = resume.get("personal_info", {}).get("email", None)
 
-    except Exception as e:
-        print(f"❌ Error: {e}")
+    for match in results:
+        if match["similarity_score"] >= 0.2 and email:
+            subject = "Interview Invitation - Tech Role"
+            content = (
+                f"Hi,\n\nWe were impressed by your resume and would love to schedule an interview.\n"
+                f"📅 Date: 8th April 2025\n"
+                f"⏰ Time: 11:00 AM IST\n"
+                f"💻 Format: Google Meet\n"
+                f"\nPlease confirm your availability.\n\nRegards,\nHR Team"
+            )
+            send_email(email, subject, content)
+        else:
+            print(f"❌ Similarity too low or email missing for: {match['document']}")
