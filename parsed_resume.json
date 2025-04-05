@@ -38,16 +38,16 @@
   "skills": [
     "Cloud Computing - Expert in AWS, Azure, and GCP; implemented scalable cloud architectures for enterprise applications."
   ],
-  "TechStack": [
+  "tech_stack": [
     "Metasploit",
     "Wireshark",
     "Burp Suite",
     "Kali Linux"
   ],
-  "Achievements": [
+  "achievements": [
     "Developed an AI chatbot - Built a chatbot that reduced customer support tickets by 40%, enhancing user experience and efficiency."
   ],
-  "Certifications": [
+  "certifications": [
     "AWS Certified Solutions Architect - Validated expertise in designing and deploying scalable AWS solutions, optimizing performance and security."
   ]
 }
