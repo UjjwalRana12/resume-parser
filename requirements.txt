@@ -1,0 +1,21 @@
+langchain
+openai
+ollama
+requests
+langchain_community
+fastapi
+spacy
+uvicorn 
+pdfplumber 
+python-docx 
+spacy 
+sentence-transformers
+faiss-cpu
+pypdf
+langchain-ollama
+langchain-community
+
+  langchain-community 
+  google-generativeai
+
+
