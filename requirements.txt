@@ -14,7 +14,7 @@ faiss-cpu
 pypdf
 langchain-ollama
 langchain-community
-
+langchain_google_genai
   langchain-community 
   google-generativeai
   python-multipart

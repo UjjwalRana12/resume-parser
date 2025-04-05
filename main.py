@@ -10,7 +10,6 @@ from langchain.prompts import PromptTemplate
 from agents.parser import ResumeData  
 from agents.pdf_loader import extract_text_from_pdf  
 
-# Load environment variables
 load_dotenv()
 google_api_key = os.getenv("GOOGLE_API_KEY")
 if not google_api_key:
